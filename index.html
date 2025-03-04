@@ -85,54 +85,6 @@
             opacity: 0.9;
         }
 
-        /* Tool Categories */
-        .categories {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .categories h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .category-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .category-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .category-card img {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 1rem;
-        }
-
-        .category-card h3 {
-            font-size: 1.25rem;
-            margin: 0.5rem 0;
-        }
-
-        .category-card p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
         /* Featured Tools */
         .featured-tools {
             background: var(--background);
@@ -153,33 +105,39 @@
             margin: 0 auto;
         }
 
-        .tool-card {
+        a.tool-card {
+            text-decoration: none;
+            color: inherit;
+            display: block;
             background: white;
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: var(--shadow);
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .tool-card:hover {
+        a.tool-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .tool-card img {
+        a.tool-card img {
             width: 50px;
             height: 50px;
             margin-bottom: 1rem;
         }
 
-        .tool-card h3 {
+        a.tool-card h3 {
             font-size: 1.25rem;
             margin: 0.5rem 0;
+            color: #333;
         }
 
-        .tool-card p {
+        a.tool-card p {
             font-size: 0.9rem;
             color: #666;
+            margin: 0;
         }
 
         /* Footer */
@@ -209,7 +167,7 @@
                 font-size: 1rem;
             }
 
-            .category-grid, .tool-grid {
+            .tool-grid {
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
         }
@@ -235,47 +193,233 @@
         <p>Compress, convert, edit, and optimize images and PDFs with ease.</p>
     </section>
 
-    <!-- Tool Categories -->
-    <section class="categories">
-        <h2>Explore Tool Categories</h2>
-        <div class="category-grid">
-            <div class="category-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" alt="Image Tools">
-                <h3>Image Tools</h3>
-                <p>Compress, resize, convert, and edit images.</p>
-            </div>
-            <div class="category-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Tools">
-                <h3>PDF Tools</h3>
-                <p>Merge, split, compress, and convert PDFs.</p>
-            </div>
-            <div class="category-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/2092/2092499.png" alt="Other Tools">
-                <h3>Other Tools</h3>
-                <p>Explore more tools for your needs.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Featured Tools -->
     <section class="featured-tools">
         <h2>Featured Tools</h2>
         <div class="tool-grid">
-            <a href="/Tool/img-compress.html" class="tool-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" alt="Image Compressor">
-          <h3>Image Compressor</h3>
-             <p>Reduce image size without losing quality.</p>
-             </a>
-            <div class="tool-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Merger">
-                <h3>PDF Merger</h3>
-                <p>Combine multiple PDFs into one.</p>
-            </div>
-            <div class="tool-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/136/136524.png" alt="Image Converter">
-                <h3>Image Converter</h3>
-                <p>Convert images to different formats.</p>
-            </div>
+            <!-- Merge PDF -->
+            <a href="/merge-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/337/337958.png" alt="Merge PDF">
+                <h3>Merge PDF</h3>
+                <p>Combine multiple PDFs into a single document.</p>
+            </a>
+
+            <!-- Split PDF -->
+            <a href="/split-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Split PDF">
+                <h3>Split PDF</h3>
+                <p>Split a PDF into multiple documents.</p>
+            </a>
+
+            <!-- Remove Pages -->
+            <a href="/remove-pages" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" alt="Remove Pages">
+                <h3>Remove Pages</h3>
+                <p>Delete specific pages from a PDF.</p>
+            </a>
+
+            <!-- Extract Pages -->
+            <a href="/extract-pages" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136524.png" alt="Extract Pages">
+                <h3>Extract Pages</h3>
+                <p>Extract specific pages from a PDF.</p>
+            </a>
+
+            <!-- Organize PDF -->
+            <a href="/organize-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136525.png" alt="Organize PDF">
+                <h3>Organize PDF</h3>
+                <p>Rearrange pages in a PDF document.</p>
+            </a>
+
+            <!-- Scan to PDF -->
+            <a href="/scan-to-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/337/337958.png" alt="Scan to PDF">
+                <h3>Scan to PDF</h3>
+                <p>Convert scanned documents to PDF.</p>
+            </a>
+
+            <!-- Optimize PDF -->
+            <a href="/optimize-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Optimize PDF">
+                <h3>Optimize PDF</h3>
+                <p>Reduce PDF file size without losing quality.</p>
+            </a>
+
+            <!-- Compress PDF -->
+            <a href="/compress-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" alt="Compress PDF">
+                <h3>Compress PDF</h3>
+                <p>Compress PDF files for easier sharing.</p>
+            </a>
+
+            <!-- Repair PDF -->
+            <a href="/repair-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136524.png" alt="Repair PDF">
+                <h3>Repair PDF</h3>
+                <p>Fix corrupted or damaged PDF files.</p>
+            </a>
+
+            <!-- OCR PDF -->
+            <a href="/ocr-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136525.png" alt="OCR PDF">
+                <h3>OCR PDF</h3>
+                <p>Convert scanned PDFs into searchable text.</p>
+            </a>
+
+            <!-- Convert to PDF -->
+            <a href="/convert-to-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/337/337958.png" alt="Convert to PDF">
+                <h3>Convert to PDF</h3>
+                <p>Convert various file formats to PDF.</p>
+            </a>
+
+            <!-- JPG to PDF -->
+            <a href="/jpg-to-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" alt="JPG to PDF">
+                <h3>JPG to PDF</h3>
+                <p>Convert JPG images to PDF documents.</p>
+            </a>
+
+            <!-- WORD to PDF -->
+            <a href="/word-to-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136524.png" alt="WORD to PDF">
+                <h3>WORD to PDF</h3>
+                <p>Convert Word documents to PDF.</p>
+            </a>
+
+            <!-- POWERPOINT to PDF -->
+            <a href="/powerpoint-to-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136525.png" alt="POWERPOINT to PDF">
+                <h3>POWERPOINT to PDF</h3>
+                <p>Convert PowerPoint presentations to PDF.</p>
+            </a>
+
+            <!-- EXCEL to PDF -->
+            <a href="/excel-to-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/337/337958.png" alt="EXCEL to PDF">
+                <h3>EXCEL to PDF</h3>
+                <p>Convert Excel spreadsheets to PDF.</p>
+            </a>
+
+            <!-- HTML to PDF -->
+            <a href="/html-to-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" alt="HTML to PDF">
+                <h3>HTML to PDF</h3>
+                <p>Convert HTML files to PDF documents.</p>
+            </a>
+
+            <!-- Convert from PDF -->
+            <a href="/convert-from-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136524.png" alt="Convert from PDF">
+                <h3>Convert from PDF</h3>
+                <p>Convert PDFs to other file formats.</p>
+            </a>
+
+            <!-- PDF to JPG -->
+            <a href="/pdf-to-jpg" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136525.png" alt="PDF to JPG">
+                <h3>PDF to JPG</h3>
+                <p>Convert PDF pages to JPG images.</p>
+            </a>
+
+            <!-- PDF to WORD -->
+            <a href="/pdf-to-word" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/337/337958.png" alt="PDF to WORD">
+                <h3>PDF to WORD</h3>
+                <p>Convert PDFs to editable Word documents.</p>
+            </a>
+
+            <!-- PDF to POWERPOINT -->
+            <a href="/pdf-to-powerpoint" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" alt="PDF to POWERPOINT">
+                <h3>PDF to POWERPOINT</h3>
+                <p>Convert PDFs to PowerPoint presentations.</p>
+            </a>
+
+            <!-- PDF to EXCEL -->
+            <a href="/pdf-to-excel" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136524.png" alt="PDF to EXCEL">
+                <h3>PDF to EXCEL</h3>
+                <p>Convert PDFs to Excel spreadsheets.</p>
+            </a>
+
+            <!-- PDF to PDF/A -->
+            <a href="/pdf-to-pdfa" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136525.png" alt="PDF to PDF/A">
+                <h3>PDF to PDF/A</h3>
+                <p>Convert PDFs to PDF/A format.</p>
+            </a>
+
+            <!-- Edit PDF -->
+            <a href="/edit-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/337/337958.png" alt="Edit PDF">
+                <h3>Edit PDF</h3>
+                <p>Edit text, images, and more in PDFs.</p>
+            </a>
+
+            <!-- Rotate PDF -->
+            <a href="/rotate-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" alt="Rotate PDF">
+                <h3>Rotate PDF</h3>
+                <p>Rotate pages in a PDF document.</p>
+            </a>
+
+            <!-- Add Page Numbers -->
+            <a href="/add-page-numbers" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136524.png" alt="Add Page Numbers">
+                <h3>Add Page Numbers</h3>
+                <p>Add page numbers to a PDF.</p>
+            </a>
+
+            <!-- Add Watermark -->
+            <a href="/add-watermark" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136525.png" alt="Add Watermark">
+                <h3>Add Watermark</h3>
+                <p>Add a watermark to a PDF.</p>
+            </a>
+
+            <!-- PDF Security -->
+            <a href="/pdf-security" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/337/337958.png" alt="PDF Security">
+                <h3>PDF Security</h3>
+                <p>Secure PDFs with passwords and permissions.</p>
+            </a>
+
+            <!-- Unlock PDF -->
+            <a href="/unlock-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" alt="Unlock PDF">
+                <h3>Unlock PDF</h3>
+                <p>Remove passwords from PDFs.</p>
+            </a>
+
+            <!-- Protect PDF -->
+            <a href="/protect-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136524.png" alt="Protect PDF">
+                <h3>Protect PDF</h3>
+                <p>Add passwords and restrictions to PDFs.</p>
+            </a>
+
+            <!-- Sign PDF -->
+            <a href="/sign-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136525.png" alt="Sign PDF">
+                <h3>Sign PDF</h3>
+                <p>Add digital signatures to PDFs.</p>
+            </a>
+
+            <!-- Redact PDF -->
+            <a href="/redact-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/337/337958.png" alt="Redact PDF">
+                <h3>Redact PDF</h3>
+                <p>Permanently remove sensitive information from PDFs.</p>
+            </a>
+
+            <!-- Compare PDF -->
+            <a href="/compare-pdf" class="tool-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" alt="Compare PDF">
+                <h3>Compare PDF</h3>
+                <p>Compare two PDFs and highlight differences.</p>
+            </a>
         </div>
     </section>
 
